@@ -107,6 +107,7 @@
 
 .suggested-posts {
     margin-left: 20px;
+    display: block;
 }
 
 .suggested-post {
@@ -114,15 +115,23 @@
     border: solid;
     border-color: gray;
     border-width: 0.5px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
     color: gray;
     font-family: Helvetica, sans-serif;
     font-size: 12px;
     line-height: 20px;
+    display: grid;
 }
 
 .topic-image {
-    padding: 10px;
+    margin-right: 16px;
+    margin-bottom: 10px;
+    border-radius: 20%;
     float: right;
+}
+
+.post-text-container {
+    float: left;
 }
 
