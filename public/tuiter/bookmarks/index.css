@@ -93,5 +93,24 @@ body {
     border-top-right-radius: 20%;
     border-top-left-radius: 20%;
     max-width: 504px;
+}
 
+.actions-bar {
+    margin-top: 12px;
+    color: gray;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.action {
+    float: left;
+    margin-left: 12px;
+    color: gray;
+    font-size: 12px;
+
+}
+
+#reply {
+    margin-top: 12px;
 }
