@@ -101,16 +101,25 @@ body {
     font-size: 12px;
     display: flex;
     justify-content: space-evenly;
+    text-decoration: none;
 }
 
 .action {
     float: left;
     margin-left: 12px;
-    color: gray;
     font-size: 12px;
-
+    color: gray;
 }
 
 #reply {
     margin-top: 12px;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+#like {
+    color: red;
 }
