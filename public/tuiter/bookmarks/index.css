@@ -1,0 +1,125 @@
+body {
+    font-family: Helvetica-Neue, sans-serif;
+    background-color: black;
+}
+
+.header {
+    margin-left: 16px;
+    margin-top: 12px;
+    display: block;
+}
+
+#page-title {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.handle {
+    color: gray;
+    font-size: 12px;
+}
+
+.handle2 {
+    color: gray;
+    font-size: 15px;
+}
+
+.separator {
+    height: 1px;
+    background-color: gray;
+    margin-top: 12px;
+}
+
+.tuit {
+    margin-top: 12px;
+    margin-left: 16px;
+    display: flex;
+}
+
+.tuit-text {
+    display: block;
+    margin-left: 12px;
+}
+
+.tuit-head {
+    display: flex;
+}
+
+.username {
+    color: white;
+    font-size: 15px;
+    margin-right: 8px;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.tuit-content {
+    color: white;
+    margin-top: 8px;
+    max-width: 506px;
+}
+
+.tuit-image {
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+
+.tuit-link-title {
+    color: white;
+    margin-top: 12px;
+    font-size: 15px;
+    padding-left: 12px;
+}
+
+.tuit-link-text {
+    margin-top: 23px;
+    color: gray;
+    max-width: 504px;
+    padding: 12px;
+}
+
+.tuit-link-content {
+    margin-top: 12px;
+    border: solid;
+    border-color: gray;
+    border-width: 1px;
+    border-top: none;
+    padding-bottom: 12px;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+    max-width: 504px;
+}
+
+.actions-bar {
+    margin-top: 12px;
+    color: gray;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.action {
+    float: left;
+    margin-left: 12px;
+    font-size: 12px;
+    color: gray;
+}
+
+#reply {
+    margin-top: 12px;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+#like {
+    color: red;
+}

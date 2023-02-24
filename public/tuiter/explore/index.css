@@ -1,0 +1,137 @@
+#search-bar {
+    width:400px;
+    padding-left: 35px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 0;
+    border-width: 1px;
+    border-color: #26282C;
+    mso-border-shadow: no;
+    border-top-style: solid;
+    border-left-style: solid;
+    background-color: #26282C;
+    color: white;
+    border-radius: 25px;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#gear {
+    position: absolute;
+    right: 40px;
+    top: 42px;
+}
+
+::placeholder {
+    font-family: Helvetica, sans-serif;
+
+}
+
+#background {
+    color: black;
+    background-color: black;
+}
+
+#tabs-bar {
+    margin-top: 50px;
+    align-self: center; /*This doesn't do anything right now*/
+}
+
+.tabs {
+    color: RGB(110, 118, 125);
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.tab-selected {
+    color: RGB(29,161,242);
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline: RGB(29,161,242);
+    text-underline-offset: 15px;
+    text-underline-style: thick;
+}
+
+.left-float {
+    float: left;
+}
+
+.right-float {
+    float: right;
+}
+
+.separator {
+    background-color: #1D1E23;
+    padding: 5px;
+    margin-top: 13px;
+    margin-left: 20px;
+    border:solid;
+    border-color: gray;
+    border-width: 0.5px;
+}
+
+.trending-posts {
+    margin-left: 20px;
+    border: solid;
+    border-color: gray;
+    border-width: 0.5px;
+}
+
+.trending-post {
+    margin-top: 15px;
+    margin-left: 10px;
+    color: gray;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.username {
+    float: left;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.suggested-posts {
+    margin-left: 20px;
+    display: block;
+}
+
+.suggested-post {
+    size: 100px;
+    border: solid;
+    border-color: gray;
+    border-width: 0.5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: gray;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    display: grid;
+}
+
+.topic-image {
+    margin-right: 16px;
+    margin-bottom: 10px;
+    border-radius: 20%;
+    float: right;
+}
+
+.post-text-container {
+    float: left;
+}
+
