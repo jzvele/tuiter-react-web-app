@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {useLocation} from "react-router";
 const NavigationSidebar = (
     {
-        active = 'explore'
+        active = 'home'
     }
 ) => {
     return (
