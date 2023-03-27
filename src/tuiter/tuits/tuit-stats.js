@@ -22,14 +22,21 @@ const TuitStats = (
     }
 ) => {
 
-    const [likes, setLikes] = useState(0);
+    const [likes, setLikes] = useState(234);
+    const [liked, setLiked] = useState(false);
 
     // const likes = useSelector(state => state.likes);
     // const dispatch = useDispatch();
-    const likeTuit = () => setLikes(likes+1) ;
-    const unlikeTuit = () => setLikes(likes-1) ;
+    const likeTuit = () => {
+        setLikes(likes + 1);
+        setLiked(true);
+    };
+    const unlikeTuit = () => {
+        setLikes(likes - 1);
+        setLiked(false);
+    };
 
-    if(post.liked) {
+    if(liked) {
         return(
             <div className="row">
 
@@ -41,7 +48,7 @@ const TuitStats = (
                     <i className="fa-solid fa-retweet"/> {post.retuits}
                 </div>
 
-                <div className="col" id="likes-col" style="color: Tomato;">
+                <div className="col text-danger" id="likes-col">
                     <i  onClick={unlikeTuit} className="fa-solid fa-heart"/> {likes}
                 </div>
 
