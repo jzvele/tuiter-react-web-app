@@ -19,7 +19,6 @@ function Tuiter() {
                 <Home/>
             </container>
         </Provider>
-
     );
 }
 
