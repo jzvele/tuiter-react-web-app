@@ -8,6 +8,8 @@ import whoReducer from "../reducers/who-reducer";
 import { configureStore } from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
 import TuitsList from "../tuits/tuits-list";
+import WhatsHappening from "./whats-happening";
+
 const store = configureStore({reducer: {who: whoReducer, tuits: tuitsReducer}});
 
 function Tuiter() {
@@ -20,6 +22,7 @@ function Tuiter() {
                 </div>
                 <div className="col-10 col-md-10 col-lg-7 col-xl-6"
                      style={{"position": "relative"}}>
+                    <WhatsHappening/>
                     <TuitsList/>
                 </div>
                 <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">

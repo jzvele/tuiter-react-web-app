@@ -1,13 +1,7 @@
 import React from "react";
-// import {configureStore} from "@reduxjs/toolkit";
-// import {like, unlike} from "./tuit-stats-reducer";
-import TuitStats from "./tuit-stats"
-// import likesStore from "./likes-counter-store"
-// import {Provider} from "react-redux";
-
-// const store = configureStore({
-//     reducer: {like, unlike}
-// });
+import {useDispatch} from "react-redux";
+import TuitStats from "./tuit-stats";
+import {deleteTuit} from "./tuits-reducer";
 
 const TuitItem = (
     {
@@ -27,6 +21,10 @@ const TuitItem = (
         }
     }
 ) => {
+    const dispatch = useDispatch();
+    const deleteTuitHandler = (id) => {
+        dispatch(deleteTuit(id));
+    }
     return(
         <li className="list-group-item">
             <div className="row">
@@ -41,7 +39,11 @@ const TuitItem = (
                         <span className="me-1 ms-1">
                             {post.handle}
                         </span>
-                        • {post.time}
+                        •
+                        <span>
+                        {post.time}
+                        </span>
+                        <i className="bi bi-x-lg float-end" onClick={() => deleteTuitHandler(post._id)}/>
                     </div>
                     <div>{post.tuit}</div>
                 </div>
