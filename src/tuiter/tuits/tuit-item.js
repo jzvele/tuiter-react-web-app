@@ -50,7 +50,7 @@ const TuitItem = (
                 </div>
             </div>
             <div>
-                <TuitStats post={{post}} />
+                <TuitStats post={{...post}} />
             </div>
         </li>
     );

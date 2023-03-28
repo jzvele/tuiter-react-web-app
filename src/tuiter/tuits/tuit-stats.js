@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-// import {useDispatch, useSelector} from "react-redux";
-// import {like, unlike} from "tuit-stats-reducer"
 
 const TuitStats = (
     {
@@ -22,11 +20,10 @@ const TuitStats = (
     }
 ) => {
 
-    const [likes, setLikes] = useState(234);
+    const initialLikes = post.likes;
+    const [likes, setLikes] = useState(initialLikes);
     const [liked, setLiked] = useState(false);
 
-    // const likes = useSelector(state => state.likes);
-    // const dispatch = useDispatch();
     const likeTuit = () => {
         setLikes(likes + 1);
         setLiked(true);
