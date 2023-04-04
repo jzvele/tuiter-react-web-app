@@ -6,4 +6,25 @@ export const findTuitsThunk = createAsyncThunk(         // create thunk for find
         await service.findTuits()                           // service function. Returned data goes in
 )                                                           // redux action's payload
 
+export const deleteTuitThunk = createAsyncThunk(
+    'tuits/deleteTuit',
+    async (tuitId) => {
+        await service.deleteTuit(tuitId)
+        return tuitId
+    })
+
+export const createTuitThunk = createAsyncThunk(
+    'tuits/createTuit',
+async (tuit) => {
+    const newTuit = await service.createTuit(tuit)
+    return newTuit
+})
+
+export const updateTuitThunk =
+    createAsyncThunk(
+        'tuits/updateTuit',
+        async (tuit) =>
+            await service.updateTuit(tuit)
+    )
+
 
