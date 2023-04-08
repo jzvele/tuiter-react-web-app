@@ -6,13 +6,18 @@ import {findTuitsThunk} from "../../services/tuits-thunks";
 
 
 const TuitsList = () => {
-        const {tuits, loading} = useSelector(   // grab tuits and loading flag from reducer
-            state => state.tuitsData)
+    // const tuits123 = useSelector(state => state.tuits)
+    // console.log(state)
+    // const tuits = tuits123.tuits
+    const { tuits } = useSelector(state => state.tuits)
+    // const { loading } = useSelector(state=>state.loading)
+    const loading = false;
         const dispatch = useDispatch();
         useEffect(() => {           // on component load
             dispatch(findTuitsThunk())      // invoke find tuits thunk to fetch tuits and
         }, [])                          // put them in the reducer's store so we can
         return(                               // extract them with useSelector() and render
+            <>
             <ul className="list-group">
             {
                 loading &&     // if loading flag is true, then show a loading message while data is still coming back from the server
@@ -21,11 +26,13 @@ const TuitsList = () => {
                 </li>
             }
             {
-                tuits.map(post =>
+                tuits && tuits.length > 0 && tuits.map(post =>
                     <TuitItem
                         key={post._id} post={post}/> )
             }
         </ul>
+                {/*<pre>{JSON.stringify(tuits, null, 2)}</pre>*/}
+            </>
     );
 };
 export default TuitsList;

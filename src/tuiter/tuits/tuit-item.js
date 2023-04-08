@@ -8,10 +8,10 @@ const TuitItem = (
         post = {
             "_id": 234,
             "topic": "Space",
-            "userName": "SpaceX",
+            "username": "SpaceX",
             "time": "2h",
             "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
-            "image": "spacex.png",
+            "image": "spacex.jpeg",
             "liked": true,
             "replies": 123,
             "retuits": 432,
@@ -26,14 +26,15 @@ const TuitItem = (
         dispatch(deleteTuitThunk(id));
     }
     return(
+        <>
         <li className="list-group-item">
             <div className="row">
                 <div className="col-10">
                     <div>
                         <span className="me-1">
-                        <strong>
-                        {post.userName}
-                        </strong>
+                            <strong>
+                            {post.username}
+                            </strong>
                         </span>
                         <i className="fa-solid fa-circle-check"/>
                         <span className="me-1 ms-1">
@@ -47,14 +48,15 @@ const TuitItem = (
                     </div>
                     <div>{post.tuit}</div>
                 </div>
-                <div className="col-2">
-                    <img width={70} className="float-end rounded-3" src={`/images/${post.image}`}/>
+                <div className='col' id='img-span'>
+                        <img width={70} className="float-end rounded-3" src={`/images/${post.image}`}/>
                 </div>
             </div>
             <div>
                 <TuitStats post={{...post}} />
             </div>
         </li>
+        </>
     );
 };
 export default TuitItem;
