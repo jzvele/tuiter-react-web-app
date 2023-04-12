@@ -1,34 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
+import {useDispatch, useSelector} from "react-redux";
 
-
-const ProfileComponent = (
-    { userProfile =
-
-        {
-            "firstName": 'Jane',
-            "lastName": 'Doe',
-            "handle": '@janedoe',
-            "profilePicture": '/images/default-avatar-profile-icon-of-social-media-user-vector.jpeg',
-            "bannerPicture": '/images/twitter-banner.png',
-            "bio": 'You\'ve met some of my relatives.',
-            'website': 'youtube.com/webdevtv',
-            'location': 'Boston, MA',
-            'dateOfBirth': 'January 1 1988',
-            'dateJoined': 'April 2011',
-            'followingCount': 540,
-            'followersCount': 723
-        }
-    }
-) => {
-    let [profile, setProfile] = useState('');
-
+const ProfileComponent = () => {
+    const userProfile = useSelector(state => state);
+    const dispatch = useDispatch();
+    const setProfile = (newProfile) => {
+        dispatch({
+            type: 'UPDATE_PROFILE',
+            profile: newProfile
+        })
+    };
     return (
         <div className="container">
-            <div className="row">
-                <img className="rounded" src={userProfile.bannerPicture} alt='Banner picture'/>
+            <div className="card">
+                <img className="rounded card-img" src={userProfile.bannerPicture} alt='Banner picture'/>
             </div>
             <div className='d-flex justify-content-end mt-1'>
-                    <button type="button" className="btn btn-small btn-light rounded-pill">Edit Profile</button>
+                <button type="button" className="btn btn-small btn-light rounded-pill">Edit Profile</button>
             </div>
             <div className="row mt-3">
                 <div className="col-3">
@@ -43,8 +31,8 @@ const ProfileComponent = (
                     <div className="d-flex mb-2 justify-content-between text-muted">
                         <div>
                             <div>
-                            <i className="fa-solid fa-location-dot me-2"/>
-                            {userProfile.location}</div>
+                                <i className="fa-solid fa-location-dot me-2"/>
+                                {userProfile.location}</div>
                         </div>
                         <div>
                             <i className="fa-solid fa-cake-candles me-2"/>
