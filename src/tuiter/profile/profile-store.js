@@ -12,9 +12,7 @@ const profile = {
     'dateOfBirth': 'January 1 1988',
     'dateJoined': 'April 2011',
     'followingCount': 540,
-    'followersCount': 723,
-    'fullName' : '',
-};
+    'followersCount': 723};
 
 const profileReducer = (state = profile, action) => {
     return profile;

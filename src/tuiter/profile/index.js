@@ -1,26 +1,21 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 const ProfileComponent = () => {
-    const userProfile = useSelector(state => state);
-    const dispatch = useDispatch();
-    const setProfile = (newProfile) => {
-        dispatch({
-            type: 'UPDATE_PROFILE',
-            profile: newProfile
-        })
-    };
+    const userProfile = useSelector(state => state.profile.currentUser);
+    // console.log(userProfile);
     return (
         <div className="container">
             <div className="card">
-                <img className="rounded card-img" src={userProfile.bannerPicture} alt='Banner picture'/>
+                <img className="rounded card-img" src={userProfile.bannerPicture} alt='Banner'/>
             </div>
             <div className='d-flex justify-content-end mt-1'>
-                <button type="button" className="btn btn-small btn-light rounded-pill">Edit Profile</button>
+                <Link to="/tuiter/edit-profile" type="button" className="btn btn-small btn-light rounded-pill">Edit Profile</Link>
             </div>
             <div className="row mt-3">
                 <div className="col-3">
-                    <img src={userProfile.profilePicture} alt="Profile picture" className="img-fluid rounded-circle" />
+                    <img src={userProfile.profilePicture} alt="Profile" className="img-fluid rounded-circle" />
                 </div>
                 <div className="col-9">
                     <div>

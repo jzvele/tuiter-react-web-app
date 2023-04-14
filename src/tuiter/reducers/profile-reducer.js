@@ -17,16 +17,21 @@ const currentUser = {
 
 const profileSlice = createSlice({
     name: 'Profile',
-    initialState: currentUser,
+    initialState: {
+        currentUser
+    },
     reducers: {
-        saveProfile(state=currentUser, action) {
-            switch (action.type) {
-                case "UPDATE_PROFILE":
-                    return action.profile;
-                default:
-                    return state;
-                }
-            }
+        saveProfile(state, action) {
+            state.currentUser = action.payload;
+            // console.log(action)
+        }
+            // switch (action.type) {
+            //     case "UPDATE_PROFILE":
+            //         return action.profile;
+            //     default:
+            //         return state;
+            //     }
+            // }
     }
 });
 
