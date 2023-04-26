@@ -1,7 +1,8 @@
 import axios from 'axios';
 // const TUITS_API = 'http://localhost:4000/api/tuits';    // location of HTTP services
 // const TUITS_API = 'https://tuiter-node-server-app-96k7.onrender.com/api/tuits';
-const API_BASE = process.env.REACT_APP_API_BASE;    // Determine whether the local server or external one is used based on environment
+const API_BASE = "mongodb://127.0.0.1:27017/tuiter";    // Determine whether the local server or external one is used based on environment
+
 const TUITS_API = `${API_BASE}/tuits`;
 
 export const createTuit = async (tuit) => {
@@ -10,6 +11,7 @@ export const createTuit = async (tuit) => {
 }
 
 export const findTuits = async () => {      // async tags this function as asynchronous
+    console.log("FindTuits service")
     const response = await axios.get(TUITS_API);    // send HTTP GET request to TUITS_API
     const tuits = response.data;            // extract JSON array from response from server
     return tuits;

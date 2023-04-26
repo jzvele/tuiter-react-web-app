@@ -6,33 +6,32 @@ import {findTuitsThunk} from "../../services/tuits-thunks";
 
 
 const TuitsList = () => {
-    // const tuits123 = useSelector(state => state.tuits)
-    // console.log(state)
-    // const tuits = tuits123.tuits
     const { tuits } = useSelector(state => state.tuits)
-    // const { loading } = useSelector(state=>state.loading)
+    console.log({tuits})
     const loading = false;
-        const dispatch = useDispatch();
-        useEffect(() => {           // on component load
-            dispatch(findTuitsThunk())      // invoke find tuits thunk to fetch tuits and
-        }, [])                          // put them in the reducer's store so we can
-        return(                               // extract them with useSelector() and render
-            <>
-            <ul className="list-group">
-            {
-                loading &&     // if loading flag is true, then show a loading message while data is still coming back from the server
-                <li className="list-group-item">
-                    Loading...
-                </li>
-            }
-            {
-                tuits && tuits.length > 0 && tuits.map(post =>
-                    <TuitItem
-                        key={post._id} post={post}/> )
-            }
-        </ul>
-                {/*<pre>{JSON.stringify(tuits, null, 2)}</pre>*/}
-            </>
+    const dispatch = useDispatch();
+    useEffect(() => {           // on component load
+        dispatch(findTuitsThunk())      // invoke find tuits thunk to fetch tuits and
+    }, [])                          // put them in the reducer's store so we can
+    return(                               // extract them with useSelector() and render
+        <div>
+            <h1>Testing: TuitList component loads </h1>
+            {/*<ul className="list-group">*/}
+            {/*    {*/}
+            {/*        loading &&     // if loading flag is true, then show a loading message while data is still coming back from the server*/}
+            {/*        <li className="list-group-item">*/}
+            {/*            Loading...*/}
+            {/*        </li>*/}
+            {/*    }*/}
+            {/*    {*/}
+            {/*        tuits && tuits.length > 0 && tuits.map(post =>*/}
+            {/*            <TuitItem*/}
+            {/*                key={post._id} post={post}/> )*/}
+            {/*    }*/}
+            {/*</ul>*/}
+                <h4>Tuits Array should render below this</h4>
+                <pre>{JSON.stringify(tuits, null, 2)}</pre>
+        </div>
     );
 };
 export default TuitsList;

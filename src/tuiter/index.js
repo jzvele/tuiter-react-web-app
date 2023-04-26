@@ -11,9 +11,9 @@ function Tuiter() {
 
     return (
         <Provider store={store}>
-            <container>
+            <div className="container">
                 <Home/>
-            </container>
+            </div>
         </Provider>
     );
 }
